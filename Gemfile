@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '4.0.0'
 
 gem 'pg'
 gem 'unicorn'
 gem 'jquery-rails'
 gem 'therubyracer'
 gem 'haml-rails'
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.1.1'
 gem 'carrierwave'
 gem 'carrierwave_backgrounder'
 gem 'will_paginate'
@@ -15,15 +15,11 @@ gem 'will_paginate-bootstrap'
 gem 'font-awesome-rails'
 gem 'resque'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'coffee-rails'
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'bootstrap-sass'
-
-  gem 'uglifier', '>= 1.0.3'
-end
+#Assets
+gem 'coffee-rails', '4.0.0'
+gem 'sass-rails',   '4.0.0'
+gem 'bootstrap-sass'
+gem 'uglifier', '>= 1.0.3'
 
 group :test, :development do
   gem 'factory_girl_rails'
