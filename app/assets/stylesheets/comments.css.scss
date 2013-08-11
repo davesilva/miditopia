@@ -1,0 +1,18 @@
+.comment {
+  clear: both;
+}
+
+.comment-info {
+  display: inline-block;
+}
+
+.comment-actions {
+  display: inline-block;
+  float: right;
+}
+
+.comment-form {
+  textarea {
+    width: 99%;
+  }
+}

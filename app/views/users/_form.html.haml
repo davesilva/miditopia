@@ -1,0 +1,42 @@
+#sign-up.big-form
+  = form_for(@user, :html => { :class => 'form-horizontal' }) do |f|
+
+    .center.well
+      - if @user.new_record?
+        %h1 Sign up
+      - else
+        %h1 Edit Profile
+
+      .control-group
+        = f.label :username, :class => 'control-label'
+        .controls
+          = f.text_field :username
+        = render :partial => 'shared/error_messages',
+                 :locals => { :obj => f.object, :field => :username }
+
+      .control-group
+        = f.label :email, :class => 'control-label'
+        .controls
+          = f.text_field :email
+        = render :partial => 'shared/error_messages',
+                 :locals => { :obj => f.object, :field => :email }
+
+      .control-group
+        = f.label :password, :class => 'control-label'
+        .controls
+          = f.password_field :password
+        = render :partial => 'shared/error_messages',
+                 :locals => { :obj => f.object, :field => :password }
+
+      .control-group
+        = f.label :password_confirmation, :class => 'control-label'
+        .controls
+          = f.password_field :password_confirmation
+        = render :partial => 'shared/error_messages',
+                 :locals => { :obj => f.object, :field => :password_confirmation }
+
+      %br
+      - if @user.new_record?
+        = f.submit "Create an account", :class => 'btn btn-large btn-primary'
+      - else
+        = f.submit "Update profile", :class => 'btn btn-large btn-primary'

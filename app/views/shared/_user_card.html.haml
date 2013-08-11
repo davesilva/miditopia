@@ -1,0 +1,7 @@
+.media
+  .user-card.pull-left
+    = link_to user do
+      = gravatar_for user
+  .media-body
+    = link_to user.username, user, :class => 'username'
+    = yield

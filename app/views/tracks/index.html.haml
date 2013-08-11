@@ -1,0 +1,20 @@
+#track-list
+  #tracks-top
+    - if signed_in?
+      = link_to new_track_path, :id => 'upload-button',
+                                :class => 'btn btn-primary btn-large' do
+        %i.icon-upload-alt.icon-large
+        Upload a MIDI File
+
+    = will_paginate @tracks, :renderer => BootstrapPagination::Rails
+    = form_tag '', :method => :get, :class => 'form-search' do
+      .input-append
+        = text_field_tag :query, '', :placeholder => 'Search for title or artist',
+                                     :class => 'search-query'
+        = button_tag :class => 'btn' do
+          %i.icon-search
+
+  = render @tracks
+
+  #tracks-bottom
+    = will_paginate @tracks, :renderer => BootstrapPagination::Rails

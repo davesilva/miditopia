@@ -1,0 +1,17 @@
+.comment.well
+  .comment-info
+    = render :layout => 'shared/user_card', :locals => { :user => comment.user } do
+      %p.body= simple_format(comment.body)
+
+  .comment-actions
+    - if current_user?(comment.user) || current_user_admin?
+      .action.edit-action
+        = link_to edit_track_comment_path(comment.track, comment) do
+          %i.icon-edit.icon-large
+
+      .action.delete-action
+        = link_to track_comment_path(comment.track, comment),
+                    :method => :delete,
+                    :data => { :confirm => 'Really delete?' } do
+          %i.icon-trash.icon-large
+

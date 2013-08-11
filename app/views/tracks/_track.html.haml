@@ -1,0 +1,29 @@
+.well
+  .track
+    .track-info
+      = render :layout => 'shared/user_card', :locals => { :user => track.user } do
+        %h4.media-heading= "#{track.artist} - #{track.title}"
+        %audio{:controls => ''}
+          %source{:src => track.midi_file.ogg.url, :type => 'audio/ogg'}
+          %source{:src => track.midi_file.mp3.url, :type => 'audio/mp3'}
+
+    .track-actions
+      - if current_user?(track.user) || current_user_admin?
+        .action.edit-action
+          = link_to edit_track_path(track) do
+            %i.icon-edit.icon-large
+
+        .action.delete-action
+          = link_to track, :method => :delete,
+                           :data => { :confirm => 'Really delete?' } do
+            %i.icon-trash.icon-large
+
+  - if track.comments.exists?
+    %hr
+      .track-comments
+        = render track.comments
+
+  - if signed_in?
+    .track-new-comment
+      = render :partial => 'comments/form',
+               :locals => { :comment => track.comments.new }

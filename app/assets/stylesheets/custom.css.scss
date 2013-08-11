@@ -1,0 +1,103 @@
+@import 'bootstrap';
+
+header {
+  #logo {
+    float: left;
+
+    h3 {
+      margin: 0 0;
+    }
+  }
+
+  #log-in {
+    float: right;
+  }
+
+  .navbar-inner {
+    @include border-radius(0px);
+  }
+
+  .welcome-msg {
+    color: white;
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+.big-form {
+  text-align: center;
+
+  .center {
+    display: inline-block;
+  }
+
+  h1 {
+    margin-bottom: 40px;
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+.action {
+  display: inline-block;
+  float: left;
+  margin-left: 10px;
+
+  a {
+    color: gray;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    i {
+      padding-right: 5px;
+    }
+  }
+}
+
+.delete-action {
+  a:hover {
+    color: red;
+  }  
+}
+
+.edit-action {
+  a:hover {
+    color: blue;
+  }  
+}
+
+.user-card {
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+
+    text-align: center;
+
+    img {
+      display: inline-block;
+      clear: both;
+    }
+  }
+}
+
+.username {
+  font-weight: bold;
+}
+
+.title {
+  font-weight: bold;
+}
+
+
+// Remove ugly glyphicons images
+[class^="icon-"],
+[class*="icon-"] {
+  background-image: none !important;
+}

@@ -1,0 +1,8 @@
+.comment-form
+  = form_for [comment.track, comment] do |f|
+    = f.text_area :body, :placeholder => 'Write a comment...', :rows => 4
+    = button_tag :class => 'btn btn-primary' do
+      %i.icon-comment
+      Post comment
+    = render :partial => 'shared/error_messages',
+             :locals => { :obj => f.object, :field => :body }

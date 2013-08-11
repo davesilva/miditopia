@@ -1,0 +1,21 @@
+# Emacs generated files
+*~
+.\#*
+\#*\#
+
+# Ignore bundler config
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+*~
+
+.sass-cache
+
+# Uploaded files
+/public/uploads
+
+# Zeus files
+zeus.json
+custom_plan.rb

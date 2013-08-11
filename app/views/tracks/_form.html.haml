@@ -1,0 +1,29 @@
+#upload.big-form
+  = form_for(@track, :html => { :class => 'form-horizontal' }) do |f|
+    .center.well
+      %h1 Upload
+
+      .control-group
+        = f.label :file, :class => 'control-label'
+        .controls
+          = f.file_field :midi_file
+        = render :partial => 'shared/error_messages',
+                 :locals => { :obj => f.object, :field => :midi_file }
+
+      #track_info_form
+        .control-group
+          = f.label :artist, :class => 'control-label'
+          .controls
+            = f.text_field :artist
+          = render :partial => 'shared/error_messages',
+                   :locals => { :obj => f.object, :field => :artist }
+
+        .control-group
+          = f.label :title, :class => 'control-label'
+          .controls
+            = f.text_field :title
+          = render :partial => 'shared/error_messages',
+                   :locals => { :obj => f.object, :field => :title }
+
+    %br
+    = f.submit "Upload!", :class => 'btn btn-large btn-primary'

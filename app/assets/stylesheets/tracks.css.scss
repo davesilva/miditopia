@@ -1,0 +1,48 @@
+#upload-button {
+  margin-bottom: 20px;
+  float: right;
+}
+
+#tracks-top {
+  clear: both;
+  display: inline-block;
+  width: 100%;
+
+  #upload-button {
+    float: right;
+    margin-top: 10px;
+  }
+  .pagination {
+    float: left;
+  }
+  .form-search {
+    float: left;
+    margin-top: 20px;
+    margin-left: 40px;
+  }
+}
+
+#tracks-bottom {
+  clear: both;
+  display: inline-block;
+
+  .pagination {
+    float: left;
+  }
+}
+
+.track {
+  display: inline-block;
+  clear: both;
+  width: 100%;
+}
+
+.track-info {
+  display: inline-block;
+  float: left;
+}
+
+.track-actions {
+  display: inline-block;
+  float: right;
+}
