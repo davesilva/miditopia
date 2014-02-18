@@ -32,7 +32,6 @@ end
 
 group :development do
   gem 'pry-rails'
-  gem 'capistrano'
 
   gem 'guard'
   gem 'rb-inotify', :require => false
